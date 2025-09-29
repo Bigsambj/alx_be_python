@@ -8,23 +8,24 @@ def main():
 
     operation = input("Choose the operation (+, -, *, /): ").strip()
 
-    if operation == "+":
-        result = num1 + num2
-        print(f"The result is {result}.")
-    elif operation == "-":
-        result = num1 - num2
-        print(f"The result is {result}.")
-    elif operation == "*":
-        result = num1 * num2
-        print(f"The result is {result}.")
-    elif operation == "/":
-        if num2 == 0:
-            print("Cannot divide by zero.")
-        else:
-            result = num1 / num2
+    match operation:
+        case "+":
+            result = num1 + num2
             print(f"The result is {result}.")
-    else:
-        print("Invalid operation. Please choose from +, -, *, /.")
+        case "-":
+            result = num1 - num2
+            print(f"The result is {result}.")
+        case "*":
+            result = num1 * num2
+            print(f"The result is {result}.")
+        case "/":
+            if num2 == 0:
+                print("Cannot divide by zero.")
+            else:
+                result = num1 / num2
+                print(f"The result is {result}.")
+        case _:
+            print("Invalid operation. Please choose from +, -, *, /.")
 
 if __name__ == "__main__":
     main()
